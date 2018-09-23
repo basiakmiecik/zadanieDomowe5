@@ -14,16 +14,26 @@ public class Points {
         int y=scanner.nextInt();
         scanner.nextLine();
         String cw="I";
-        if (x>0&&y<0){
-            cw="II";
+        if(x!=0&&y!=0){
+            if (x>0&&y<0){
+                cw="IV";
+            }
+            else if (x<0&&y<0){
+                cw="III";
+            }
+            else if (x<0&&y>0){
+                cw="II";
+            }
+        System.out.print("Punkt ("+x+", "+y+") znajduje się w ćwiartce "+cw+", układu współrzędnych");}
+        else if (x==0&&y!=0){
+            System.out.println("Punkt znajduje się na osi Ox");
         }
-        else if (x<0&&y<0){
-            cw="III";
+        else if (y==0&&x!=0){
+            System.out.println("Punkt znajduje się na osi Oy");
         }
-        else if (x<0&&y>0){
-            cw="IV";
+        else{
+            System.out.println("Punkt znajduje się w początku układu współrzędnych");
         }
-        System.out.print("Punkt ("+x+", "+y+") znajduje się w ćwiartce "+cw+", układu współrzędnych");
 
     }
 }
